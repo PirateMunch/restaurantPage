@@ -31,6 +31,8 @@ function functionOne() {
     divBtn.appendChild(menuBtn);
 
     const section = document.createElement('section');
+    section.id = "section";
+    section.dataset.loaded = true;
     main.appendChild(section);
 
     const span = document.createElement('span');
