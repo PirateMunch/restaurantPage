@@ -1,9 +1,8 @@
-function functionThree () {
-    console.log("Menu Yoooo")
-    const section = document.getElementById('section');
-    
+import { removeChilds } from "./removeChilds";
+
+function loadMenuPage () {
+    removeChilds(section)
     const divMenu = document.createElement('div');
-    divMenu.dataset.loaded = true;
     divMenu.id = "divMenu";
     section.appendChild(divMenu);
 
@@ -49,6 +48,11 @@ function functionThree () {
 
     const dess3 = document.createElement('li');
     dessLi.appendChild(dess3);
+
+    const img = document.createElement('img');
+    img.id = "img";
+    img.src = "restaurant.jpg";
+    section.appendChild(img);
 };
 
-export {functionThree};
+export {loadMenuPage};

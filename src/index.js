@@ -1,53 +1,28 @@
-import {functionOne} from './loadPage.js';
-import {functionTwo} from './contact.js';
-import {functionThree} from './menu.js';
+import {loadHomePage} from './homePage.js';
+import {loadContactPage} from './contact.js';
+import {loadMenuPage} from './menu.js';
+import {loadMainPage} from './mainPage.js';
 
-console.log("works")
-window.onload(functionOne());
-console.log("not working?!")
+window.addEventListener('load', loadMainPage);
 
-const section = document.getElementById('section');
-const divContact = document.getElementById('divContact');
-const divMenu = document.getElementById('divMenu');
-const homeBtn = document.querySelector('.home');
-const contactBtn = document.querySelector('.contact');
-const menuBtn = document.querySelector('.menu');
+globalEventListener("click", ".contact", e => {
+    loadContactPage();
+});
 
-const tester = function () {
-    console.log("Works")
-}
+globalEventListener("click", ".menu", e => {
+    loadMenuPage();
+});
 
-const homeFunction = function () {
-    if (section.dataset.loaded === true) {
-       console.log("true yo")
-    } else {
-        functionOne();
-    };
+globalEventListener("click", ".home", e => {
+    loadHomePage();
+}) ;
+
+function globalEventListener(type, selector, callback) {
+    document.addEventListener(type, e=> {
+        if (e.target.matches(selector)) callback(e)
+    });
 };
 
-const contactFunction = function () {
-    if (divContact.dataset.loaded === true) {
-        console.log("More True yo")
-    } else {
-        functionTwo()
-    };
-};
-
-const menuFunction = function () {
-    if (divMenu.dataset.loaded === true) {
-        console.log("Menus yo")
-    } else {
-        functionThree()
-    };
-};
-
-
-
-
-
-homeBtn.addEventListener ('click', tester);
-contactBtn.addEventListener ('click', contactFunction);
-menuBtn.addEventListener ('click', menuFunction);
 
 
 
