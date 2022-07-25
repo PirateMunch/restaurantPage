@@ -1,41 +1,53 @@
-import {functionOne, functionTwo, functionThree} from './buildjs/loadPage.js';
+import {functionOne} from './loadPage.js';
+import {functionTwo} from './contact.js';
+import {functionThree} from './menu.js';
+
+console.log("works")
+window.onload(functionOne());
+console.log("not working?!")
 
 const section = document.getElementById('section');
 const divContact = document.getElementById('divContact');
 const divMenu = document.getElementById('divMenu');
-const homeBtn = document.getElementById('home');
-const contentBtn = document.getElementById('content');
-const menuBtn = document.getElementById('menu');
+const homeBtn = document.querySelector('.home');
+const contactBtn = document.querySelector('.contact');
+const menuBtn = document.querySelector('.menu');
 
-window.onload(functionOne())
-
-homeBtn.addEventListener ('click', homeFunction);
-contentBtn.addEventListener ('click', contentFunction);
-menuBtn.addEventListener ('click', menuFunction);
+const tester = function () {
+    console.log("Works")
+}
 
 const homeFunction = function () {
     if (section.dataset.loaded === true) {
        console.log("true yo")
     } else {
-        document.getElementById('home').addEventListener('click', functionOne)
+        functionOne();
     };
 };
 
-const contentFunction = function () {
-    if (divContact.dataset.loaded = true) {
+const contactFunction = function () {
+    if (divContact.dataset.loaded === true) {
         console.log("More True yo")
     } else {
-        document.getElementById('contact').addEventListener('click', functionTwo);
+        functionTwo()
     };
 };
 
 const menuFunction = function () {
-    if (divMenu.dataset.loaded = true) {
+    if (divMenu.dataset.loaded === true) {
         console.log("Menus yo")
     } else {
-        document.getElementById('menu').addEventListener('click', functionThree);
+        functionThree()
     };
 };
+
+
+
+
+
+homeBtn.addEventListener ('click', tester);
+contactBtn.addEventListener ('click', contactFunction);
+menuBtn.addEventListener ('click', menuFunction);
 
 
 

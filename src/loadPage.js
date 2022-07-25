@@ -1,12 +1,12 @@
 function functionOne() {
-    const page = document.getElementById('content');
+    const page1 = document.getElementById('content');
 
-    const header = document.createElement('header');
-    header.innerText = "Restaurant Page";
-    page.appendChild(header);
+    const header1 = document.createElement('header');
+    header1.innerText = "Restaurant Page";
+    page1.appendChild(header1);
 
     const main = document.createElement('main');
-    page.appendChild(main);
+    page1.appendChild(main);
 
     const divBtn = document.createElement('div');
     divBtn.id = "divBtn"
@@ -16,18 +16,21 @@ function functionOne() {
     homeBtn.type = "button";
     homeBtn.value = "Home";
     homeBtn.id = "home";
+    homeBtn.className = "home";
     divBtn.appendChild(homeBtn);
 
     const contactBtn = document.createElement('input');
     contactBtn.type = "button";
     contactBtn.value = "Contact";
     contactBtn.id = "contact";
+    contactBtn.className = "contact";
     divBtn.appendChild(contactBtn);
 
     const menuBtn = document.createElement('input');
     menuBtn.type = "button";
     menuBtn.value = "Menu";
     menuBtn.id = "menu";
+    menuBtn.className = "menu";
     divBtn.appendChild(menuBtn);
 
     const section = document.createElement('section');
@@ -37,7 +40,7 @@ function functionOne() {
 
     const span = document.createElement('span');
     span.innerText = ` Lorem Epsilon Lor Lor lol
-xxxxx nnnnnnnnnnnnnn jjjjjjjjjjjjjj kkkkkkkkkkkkk kkkkkkkkkkk`;
+    xxxxx nnnnnnnnnnnnnn jjjjjjjjjjjjjj kkkkkkkkkkkkk kkkkkkkkkkk`;
     section.appendChild(span);
 
     const img = document.createElement('img');
